@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darkfam Banking Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+<style>
+
+button {
+ padding: 0.8em 1.8em;
+ border: 2px solid #17C3B2;
+ position: relative;
+ overflow: hidden;
+ background-color: transparent;
+ text-align: center;
+ text-transform: uppercase;
+ font-size: 16px;
+ transition: .3s;
+ border-radius: 9px;
+ z-index: 1;
+ font-family: inherit;
+ color: #17C3B2;
+}
+
+button::before {
+ content: '';
+ width: 0;
+ height: 300%;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%) rotate(45deg);
+ background: #17C3B2;
+ transition: .5s ease;
+ display: block;
+ z-index: -1;
+}
+
+button:hover::before {
+ width: 105%;
+}
+
+button:hover {
+ color: rgb(255, 244, 244);
+}
+
+body{
+    background-color: black;
+
+}
+
+</style>
+</head>
+<body>
+    <header class="my-10">
+        <h1 class="text-center text-4xl text-white">Hey there, lets get some Dollars</h1>
+    </header>
+    <section class="  grid md:grid-cols-3 grid-cols-1 sm:grid-cols-2    mx-auto gap-4 w-3/4 ">
+        <div class="bg-gradient-to-r from-blue-800 to-cyan-400 p-10 rounded-lg text-white" >
+            <h3 class="text-2xl">Deposit</h3>
+            <p class="text-2xl">$ <span id="deposit-amount">00</p>
+        </div>
+
+        <div class="bg-gradient-to-r from-emerald-700 to-green-400 p-10 rounded-lg text-white" >
+            <h3 class="text-2xl">Withdraw</h3>
+            <p class="text-2xl">$ <span id="withdraw-amount">00</span></p>
+        </div>
+        <div class="bg-gradient-to-r from-violet-500 to-fuchsia-500 p-10 rounded-lg text-white">
+            <h3 class="text-2xl ">Balance</h3>
+            <p class="text-2xl">$ <span id="total-balance">1230</span></span></p>
+        </div>
+    </section>
+    <section class="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto w-3/4 my-5">
+        <div class="bg-yellow-500 p-10">
+            <h2 class="text-2xl">Please Deposit</h2>
+            <input type="number"  id="deposit-input"  placeholder="$ amount of deposit"  class="rounded-lg py-1 pl-3 my-3"><br>
+            <button class="btn px-4 py-1 bg-white font-semibold"  id="deposit-btn">Deposit</button>
+        </div>
+        <div class="bg-green-300 p-10">
+            <h2 class="text-2xl">Please withdraw</h2>
+            <input type="number"  id="withdraw-input"  placeholder="$ amount of withdraw" class="rounded-lg py-1 pl-3 my-3"><br>
+            <button class="btn px-4 py-1 bg-white font-semibold" id="withdraw-btn">Withdraw</button>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
